@@ -7,6 +7,7 @@ import java.util.List;
 import com.unifip.webcont.model.VehicleModel;
 import com.unifip.webcont.services.VehicleServices;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,5 +26,10 @@ public class VehicleController {
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public void createVehicle(@RequestBody VehicleModel vehicleModel) {
         vehicleServices.create(vehicleModel);
+    }
+
+    @RequestMapping(value = "/", method = RequestMethod.POST)
+    public void update(@PathVariable Long code, @RequestBody VehicleModel vehicleModel) {
+        vehicleServices.update(code, vehicleModel);
     }
 }
