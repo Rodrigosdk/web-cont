@@ -12,4 +12,10 @@ public class VehicleRepository {
         vehiclesDB.put(vehicleModel.getCode(), vehicleModel);
         return vehiclesDB;   
     }
+
+    public Map<Long, VehicleModel>  create(VehicleModel vehicle) {
+        Map<Long, VehicleModel> vehiclesDB = new HashMap<>();
+        vehiclesDB.put(vehicle.getCode(), vehicle);
+        return vehiclesDB;   
+    }
 }
