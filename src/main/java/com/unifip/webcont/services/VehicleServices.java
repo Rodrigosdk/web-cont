@@ -20,4 +20,8 @@ public class VehicleServices {
         Map<Long, VehicleModel> vehiclesDB = vehicleRepository.create(vehicle);
         return vehiclesDB.values().stream().collect(Collectors.toList());
     }
+    public List<VehicleModel> update(Long code, VehicleModel vehicle) {
+        Map<Long, VehicleModel> vehiclesDB = vehicleRepository.update(code, vehicle);
+        return vehiclesDB.values().stream().collect(Collectors.toList());
+    }
 }
